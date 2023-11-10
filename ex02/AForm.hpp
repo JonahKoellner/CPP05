@@ -6,13 +6,14 @@
 /*   By: jonahkollner <jonahkollner@student.42.f    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/08 10:19:08 by jkollner          #+#    #+#             */
-/*   Updated: 2023/11/09 18:36:14 by jonahkollne      ###   ########.fr       */
+/*   Updated: 2023/11/10 11:49:39 by jonahkollne      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #pragma once
 
 #include <string>
+#include <iostream>
 class AForm;
 #include "Bureaucrat.hpp"
 

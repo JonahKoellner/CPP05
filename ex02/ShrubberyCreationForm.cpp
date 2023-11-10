@@ -6,7 +6,7 @@
 /*   By: jonahkollner <jonahkollner@student.42.f    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/09 18:33:15 by jonahkollne       #+#    #+#             */
-/*   Updated: 2023/11/09 19:11:54 by jonahkollne      ###   ########.fr       */
+/*   Updated: 2023/11/10 11:52:56 by jonahkollne      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,6 +28,15 @@ std::string ShrubberyCreationForm::getTarget() const {
 	return (this->target);
 }
 
-void ShrubberyCreationForm::execute(Bureaucrat const & executor){
-
+void ShrubberyCreationForm::execute(Bureaucrat const & executor) const {
+	std::ofstream file;
+	file.open((this->target + "_shrubbery").c_str());
+	std::string tree = "      /\\\n     /\\*\\\n    /\\O\\*\\\n   /*/\\/\\/\\\n  /\\O\\/\\*\\/\\\n /\\*\\/\\*\\/\\/\\\n/\\O\\/\\/*/\\/O/\\\n      ||\n      ||\n      ||";
+	if (file.is_open()) {
+		file << tree;
+		file.close();
+	}
+	else {
+		std::cout << "Error opening file" << std::endl;
+	}
 }
