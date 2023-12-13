@@ -3,16 +3,20 @@
 /*                                                        :::      ::::::::   */
 /*   Form.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jonahkollner <jonahkollner@student.42.f    +#+  +:+       +#+        */
+/*   By: jkollner <jkollner@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/08 11:12:37 by jkollner          #+#    #+#             */
-/*   Updated: 2023/11/09 18:38:08 by jonahkollne      ###   ########.fr       */
+/*   Updated: 2023/12/13 15:29:17 by jkollner         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Form.hpp"
 
 Form::Form(std::string name, int gradeToSign, int gradeToExecute) : name(name), gradeToSign(gradeToSign), gradeToExecute(gradeToExecute) {
+	if (gradeToSign > 150)
+		throw Bureaucrat::GradeTooLowException();
+	if (gradeToSign < 1)
+		throw Bureaucrat::GradeTooHighException();
 	this->_signed = false;
 }
 
