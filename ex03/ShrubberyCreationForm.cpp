@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ShrubberyCreationForm.cpp                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jkollner <jkollner@student.42.fr>          +#+  +:+       +#+        */
+/*   By: jonahkollner <jonahkollner@student.42.f    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/09 18:33:15 by jonahkollne       #+#    #+#             */
-/*   Updated: 2023/12/13 15:19:07 by jkollner         ###   ########.fr       */
+/*   Updated: 2023/11/10 11:52:56 by jonahkollne      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,10 +28,7 @@ std::string ShrubberyCreationForm::getTarget() const {
 	return (this->target);
 }
 
-void ShrubberyCreationForm::execute(Bureaucrat const & executer) const {
-	if (this->getGradeToExecute() > executer.getGrade()) {
-
-	}
+void ShrubberyCreationForm::execute(Bureaucrat const & executor) const {
 	std::ofstream file;
 	file.open((this->target + "_shrubbery").c_str());
 	std::string tree = "      /\\\n     /\\*\\\n    /\\O\\*\\\n   /*/\\/\\/\\\n  /\\O\\/\\*\\/\\\n /\\*\\/\\*\\/\\/\\\n/\\O\\/\\/*/\\/O/\\\n      ||\n      ||\n      ||";

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   AForm.hpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jkollner <jkollner@student.42.fr>          +#+  +:+       +#+        */
+/*   By: jonahkollner <jonahkollner@student.42.f    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/08 10:19:08 by jkollner          #+#    #+#             */
-/*   Updated: 2023/12/13 15:08:21 by jkollner         ###   ########.fr       */
+/*   Updated: 2023/11/10 11:49:39 by jonahkollne      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ class AForm {
 		const	int gradeToExecute;
 	public:
 		AForm(std::string name, int gradeToSign, int gradeToExecute);
-		AForm(AForm const & copy);
+		AForm(Form const & copy);
 
 		AForm & operator=(AForm const & copy);
 

@@ -6,7 +6,7 @@
 /*   By: jkollner <jkollner@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/08 09:23:52 by jkollner          #+#    #+#             */
-/*   Updated: 2023/12/13 15:08:39 by jkollner         ###   ########.fr       */
+/*   Updated: 2023/11/08 11:11:57 by jkollner         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,7 +51,7 @@ int Bureaucrat::decrementGrade() {
 	return (++this->grade);
 }
 
-void	Bureaucrat::signForm(AForm &form) {
+void	Bureaucrat::signForm(Form &form) {
 	try{
 		form.beSigned(*this);
 		std::cout << this->name << " signed " << form.getName() << std::endl;

@@ -6,14 +6,14 @@
 #    By: jkollner <jkollner@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/11/08 09:12:06 by jkollner          #+#    #+#              #
-#    Updated: 2023/12/13 15:09:32 by jkollner         ###   ########.fr        #
+#    Updated: 2023/11/08 12:29:40 by jkollner         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 name = bureaucrat
 cc = c++
 cflags = -Wall -Werror -Wextra -std=c++98
-src = main.cpp Bureaucrat.cpp AForm.cpp PresidentialPardonForm.cpp RobotomyRequestForm.cpp ShrubberyCreationForm.cpp
+src = main.cpp Bureaucrat.cpp Form.cpp
 obj = ${src:.cpp=.o}
 
 all: ${name}
