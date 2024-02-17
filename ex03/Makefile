@@ -3,17 +3,17 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: jkollner <jkollner@student.42.fr>          +#+  +:+       +#+         #
+#    By: jonahkollner <jonahkollner@student.42.f    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/11/08 09:12:06 by jkollner          #+#    #+#              #
-#    Updated: 2023/11/08 12:29:40 by jkollner         ###   ########.fr        #
+#    Updated: 2024/02/17 14:47:49 by jonahkollne      ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 name = bureaucrat
 cc = c++
 cflags = -Wall -Werror -Wextra -std=c++98
-src = main.cpp Bureaucrat.cpp Form.cpp
+src = main.cpp Bureaucrat.cpp AForm.cpp PresidentialPardonForm.cpp RobotomyRequestForm.cpp ShrubberyCreationForm.cpp Intern.cpp
 obj = ${src:.cpp=.o}
 
 all: ${name}

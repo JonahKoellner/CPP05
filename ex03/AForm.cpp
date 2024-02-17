@@ -6,11 +6,25 @@
 /*   By: jonahkollner <jonahkollner@student.42.f    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/08 11:12:37 by jkollner          #+#    #+#             */
-/*   Updated: 2023/11/09 18:49:15 by jonahkollne      ###   ########.fr       */
+/*   Updated: 2024/02/17 12:43:39 by jonahkollne      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "AForm.hpp"
+
+AForm::AForm() : name("random_form"), gradeToSign(150), gradeToExecute(150) {
+	this->_signed = false;
+}
+
+void AForm::canExecute(Bureaucrat const & executor) const {
+	if (this->getGradeToExecute() < executor.getGrade()) {
+		throw AForm::GradeTooLowException();
+	}
+	if (!this->getSigned()) {
+		throw AForm::FormNotSignedException();
+	}
+	this->execute(executor);
+}
 
 AForm::AForm(std::string name, int gradeToSign, int gradeToExecute) : name(name), gradeToSign(gradeToSign), gradeToExecute(gradeToExecute) {
 	this->_signed = false;
@@ -53,6 +67,10 @@ const char* AForm::GradeTooHighException::what() const throw() {
 
 const char* AForm::GradeTooLowException::what() const throw() {
 	return ("Grade too low");
+}
+
+const char* AForm::FormNotSignedException::what() const throw() {
+	return ("Form is not signed");
 }
 
 std::ostream &operator<<(std::ostream &os, AForm const &b) {
