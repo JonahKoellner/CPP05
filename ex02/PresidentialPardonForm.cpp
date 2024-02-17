@@ -6,7 +6,7 @@
 /*   By: jonahkollner <jonahkollner@student.42.f    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/17 12:15:40 by jonahkollne       #+#    #+#             */
-/*   Updated: 2024/02/17 12:29:52 by jonahkollne      ###   ########.fr       */
+/*   Updated: 2024/02/17 12:54:53 by jonahkollne      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,15 +29,8 @@ std::string PresidentialPardonForm::getTarget() const {
 }
 
 void PresidentialPardonForm::execute(Bureaucrat const & executer) const{
-	try
-	{
-		AForm::canExecute(executer);
-		std::cout << this->target << " has been pardoned by Zafod Beeblebrox" << std::endl;
-	}
-	catch(const std::exception& e)
-	{
-		std::cerr << e.what() << '\n';
-	}
+	(void)executer;
+	std::cout << this->target << " has been pardoned by Zafod Beeblebrox" << std::endl;
 }
 
 PresidentialPardonForm::~PresidentialPardonForm() {

@@ -6,7 +6,7 @@
 /*   By: jonahkollner <jonahkollner@student.42.f    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/17 12:15:40 by jonahkollne       #+#    #+#             */
-/*   Updated: 2024/02/17 12:36:33 by jonahkollne      ###   ########.fr       */
+/*   Updated: 2024/02/17 12:55:28 by jonahkollne      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,17 +29,10 @@ std::string RobotomyRequestForm::getTarget() const {
 }
 
 void RobotomyRequestForm::execute(Bureaucrat const & executer) const{
-	try
-	{
-		AForm::canExecute(executer);
-		std::cout << "Brrrrrr <insert Drilling noice> Brrrrrr" << std::endl;
-		srand(time(NULL));
-		std::cout << this->target << " has" << (rand() % 2 == 0 ? "" : " not") << " been robotomized successfully" << std::endl;
-	}
-	catch(const std::exception& e)
-	{
-		std::cerr << e.what() << '\n';
-	}
+	(void)executer;
+	std::cout << "Brrrrrr <insert Drilling noice> Brrrrrr" << std::endl;
+	srand(time(NULL));
+	std::cout << this->target << " has" << (rand() % 2 == 0 ? "" : " not") << " been robotomized successfully" << std::endl;
 }
 
 RobotomyRequestForm::~RobotomyRequestForm() {

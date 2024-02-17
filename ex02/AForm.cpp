@@ -6,7 +6,7 @@
 /*   By: jonahkollner <jonahkollner@student.42.f    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/08 11:12:37 by jkollner          #+#    #+#             */
-/*   Updated: 2024/02/17 12:20:29 by jonahkollne      ###   ########.fr       */
+/*   Updated: 2024/02/17 12:43:39 by jonahkollne      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,6 +23,7 @@ void AForm::canExecute(Bureaucrat const & executor) const {
 	if (!this->getSigned()) {
 		throw AForm::FormNotSignedException();
 	}
+	this->execute(executor);
 }
 
 AForm::AForm(std::string name, int gradeToSign, int gradeToExecute) : name(name), gradeToSign(gradeToSign), gradeToExecute(gradeToExecute) {

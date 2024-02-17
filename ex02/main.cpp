@@ -6,7 +6,7 @@
 /*   By: jonahkollner <jonahkollner@student.42.f    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/08 09:56:35 by jkollner          #+#    #+#             */
-/*   Updated: 2024/02/17 12:33:17 by jonahkollne      ###   ########.fr       */
+/*   Updated: 2024/02/17 12:57:34 by jonahkollne      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,25 +21,25 @@ int main() {
 	PresidentialPardonForm pr("president");
 	try {
 		tr.beSigned(b1);
-		tr.execute(b1);
+		b1.executeForm(tr);
 	} catch (std::exception e) {
 		std::cout << e.what() << std::endl;
 	}
 	try {
 		//rr.beSigned(b3);
-		rr.execute(b2);
+		b2.executeForm(rr);
 	} catch (std::exception e) {
 		std::cout << e.what() << std::endl;
 	}
 	try {
 		rr.beSigned(b2);
-		rr.execute(b2);
+		b2.executeForm(rr);
 	} catch (std::exception e) {
 		std::cout << e.what() << std::endl;
 	}
 	try {
 		pr.beSigned(b3);
-		pr.execute(b3);
+		b3.executeForm(pr);
 	} catch (std::exception e) {
 		std::cout << e.what() << std::endl;
 	}

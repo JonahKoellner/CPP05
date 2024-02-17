@@ -6,7 +6,7 @@
 /*   By: jonahkollner <jonahkollner@student.42.f    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/09 18:33:29 by jonahkollne       #+#    #+#             */
-/*   Updated: 2024/02/17 12:26:41 by jonahkollne      ###   ########.fr       */
+/*   Updated: 2024/02/17 13:00:44 by jonahkollne      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,8 @@
 class ShrubberyCreationForm : public AForm {
 	private:
 		std::string target;
+	protected:
+		void execute(Bureaucrat const & executor) const;
 	public:
 		ShrubberyCreationForm(std::string target);
 		ShrubberyCreationForm(ShrubberyCreationForm const & copy);
@@ -28,7 +30,6 @@ class ShrubberyCreationForm : public AForm {
 
 		std::string getTarget() const;
 
-		void execute(Bureaucrat const & executor) const;
 
 		~ShrubberyCreationForm();
 };

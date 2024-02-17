@@ -6,7 +6,7 @@
 /*   By: jonahkollner <jonahkollner@student.42.f    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/13 15:03:29 by jkollner          #+#    #+#             */
-/*   Updated: 2024/02/17 12:27:15 by jonahkollne      ###   ########.fr       */
+/*   Updated: 2024/02/17 12:57:09 by jonahkollne      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,8 @@
 class RobotomyRequestForm : public AForm{
 	private:
 		std::string target;
+	protected:
+		void execute(Bureaucrat const & executor) const;
 	public:
 		RobotomyRequestForm(std::string target);
 		RobotomyRequestForm(RobotomyRequestForm const & copy);
@@ -27,7 +29,6 @@ class RobotomyRequestForm : public AForm{
 
 		std::string getTarget() const;
 
-		void execute(Bureaucrat const & executor) const;
 
 		~RobotomyRequestForm();
 };

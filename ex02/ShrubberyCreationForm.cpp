@@ -6,7 +6,7 @@
 /*   By: jonahkollner <jonahkollner@student.42.f    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/09 18:33:15 by jonahkollne       #+#    #+#             */
-/*   Updated: 2024/02/17 12:30:01 by jonahkollne      ###   ########.fr       */
+/*   Updated: 2024/02/17 12:55:11 by jonahkollne      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,23 +29,16 @@ std::string ShrubberyCreationForm::getTarget() const {
 }
 
 void ShrubberyCreationForm::execute(Bureaucrat const & executer) const{
-	try
-	{
-		AForm::canExecute(executer);
-		std::ofstream file;
-		file.open((this->target + "_shrubbery").c_str());
-		std::string tree = "      /\\\n     /\\*\\\n    /\\O\\*\\\n   /*/\\/\\/\\\n  /\\O\\/\\*\\/\\\n /\\*\\/\\*\\/\\/\\\n/\\O\\/\\/*/\\/O/\\\n      ||\n      ||\n      ||";
-		if (file.is_open()) {
-			file << tree;
-			file.close();
-		}
-		else {
-			std::cout << "Error opening file" << std::endl;
-		}
+	(void)executer;
+	std::ofstream file;
+	file.open((this->target + "_shrubbery").c_str());
+	std::string tree = "      /\\\n     /\\*\\\n    /\\O\\*\\\n   /*/\\/\\/\\\n  /\\O\\/\\*\\/\\\n /\\*\\/\\*\\/\\/\\\n/\\O\\/\\/*/\\/O/\\\n      ||\n      ||\n      ||";
+	if (file.is_open()) {
+		file << tree;
+		file.close();
 	}
-	catch(const std::exception& e)
-	{
-		std::cerr << e.what() << '\n';
+	else {
+		std::cout << "Error opening file" << std::endl;
 	}
 }
 
