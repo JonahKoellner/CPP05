@@ -3,14 +3,18 @@
 /*                                                        :::      ::::::::   */
 /*   Form.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jkollner <jkollner@student.42.fr>          +#+  +:+       +#+        */
+/*   By: jonahkollner <jonahkollner@student.42.f    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/08 11:12:37 by jkollner          #+#    #+#             */
-/*   Updated: 2023/12/13 15:29:17 by jkollner         ###   ########.fr       */
+/*   Updated: 2024/02/17 11:53:40 by jonahkollne      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Form.hpp"
+
+Form::Form() : name("standard_form"), gradeToSign(150), gradeToExecute(150){
+	this->_signed = false;
+}
 
 Form::Form(std::string name, int gradeToSign, int gradeToExecute) : name(name), gradeToSign(gradeToSign), gradeToExecute(gradeToExecute) {
 	if (gradeToSign > 150)
@@ -63,7 +67,7 @@ Form::~Form() {
 
 }
 
-std::ostream &operator<<(std::ostream &os, Form const &b) {
-	os << b.getName() << " is " << (b.getSigned() ? "signed" : "not signed") << " and requires a grade " << b.getGradeToSign() << " to sign and a grade " << b.getGradeToExecute() << " to execute.";
+std::ostream &operator<<(std::ostream &os, Form const &f) {
+	os << f.getName() << " is " << (f.getSigned() ? "signed" : "not signed") << " and requires a grade " << f.getGradeToSign() << " to sign and a grade " << f.getGradeToExecute() << " to execute.";
 	return (os);
 }

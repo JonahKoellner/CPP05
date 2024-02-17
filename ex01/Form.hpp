@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Form.hpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jkollner <jkollner@student.42.fr>          +#+  +:+       +#+        */
+/*   By: jonahkollner <jonahkollner@student.42.f    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/08 10:19:08 by jkollner          #+#    #+#             */
-/*   Updated: 2023/11/08 12:32:35 by jkollner         ###   ########.fr       */
+/*   Updated: 2024/02/17 11:50:13 by jonahkollne      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,6 +23,7 @@ class Form {
 		const	int gradeToSign;
 		const	int gradeToExecute;
 	public:
+		Form();
 		Form(std::string name, int gradeToSign, int gradeToExecute);
 		Form(Form const & copy);
 

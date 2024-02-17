@@ -3,15 +3,18 @@
 /*                                                        :::      ::::::::   */
 /*   Bureaucrat.cpp                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jkollner <jkollner@student.42.fr>          +#+  +:+       +#+        */
+/*   By: jonahkollner <jonahkollner@student.42.f    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/08 09:23:52 by jkollner          #+#    #+#             */
-/*   Updated: 2023/11/08 11:11:57 by jkollner         ###   ########.fr       */
+/*   Updated: 2024/02/17 11:55:25 by jonahkollne      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Bureaucrat.hpp"
 
+Bureaucrat::Bureaucrat() : name("random_bureaucrat") {
+	this->grade = 150;
+}
 
 Bureaucrat::Bureaucrat(std::string name, int grade) : name(name){
 	if (grade > 150)
@@ -56,7 +59,7 @@ void	Bureaucrat::signForm(Form &form) {
 		form.beSigned(*this);
 		std::cout << this->name << " signed " << form.getName() << std::endl;
 	} catch (std::exception &e) {
-		std::cout << this->name << " cannot sign " << form.getName() << " because " << e.what() << std::endl;
+		std::cout << this->name << " couldn't sign " << form.getName() << " because " << e.what() << std::endl;
 	}
 }
 
