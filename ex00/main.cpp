@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jkollner <jkollner@student.42.fr>          +#+  +:+       +#+        */
+/*   By: jonahkollner <jonahkollner@student.42.f    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/08 09:56:35 by jkollner          #+#    #+#             */
-/*   Updated: 2023/11/08 10:03:51 by jkollner         ###   ########.fr       */
+/*   Updated: 2024/02/17 11:46:43 by jonahkollne      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,10 @@
 int main() {
 	Bureaucrat b1("B1", 1);
 	Bureaucrat b2("B2", 150);
+	Bureaucrat b3(b1);
+	std::cout << b3 << std::endl;
+	b3 = b2;
+	std::cout << b3 << std::endl;
 	try {
 		Bureaucrat b3("B3", 160);
 	} catch (std::exception & e) {

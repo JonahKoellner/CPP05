@@ -3,15 +3,18 @@
 /*                                                        :::      ::::::::   */
 /*   Bureaucrat.cpp                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jkollner <jkollner@student.42.fr>          +#+  +:+       +#+        */
+/*   By: jonahkollner <jonahkollner@student.42.f    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/08 09:23:52 by jkollner          #+#    #+#             */
-/*   Updated: 2023/12/13 15:24:50 by jkollner         ###   ########.fr       */
+/*   Updated: 2024/02/17 11:42:10 by jonahkollne      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Bureaucrat.hpp"
 
+Bureaucrat::Bureaucrat() : name("random_bureaucrat") {
+	this->grade = 150;
+}
 
 Bureaucrat::Bureaucrat(std::string name, int grade) : name(name){
 	if (grade > 150)
@@ -26,7 +29,6 @@ Bureaucrat::Bureaucrat(Bureaucrat const &copy) : name(copy.name) {
 }
 
 Bureaucrat& Bureaucrat::operator=(Bureaucrat const &copy) {
-	//this->name = copy.name;
 	this->grade = copy.grade;
 	return (*this);
 }
