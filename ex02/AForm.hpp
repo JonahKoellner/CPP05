@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   AForm.hpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jkollner <jkollner@student.42.fr>          +#+  +:+       +#+        */
+/*   By: jonahkollner <jonahkollner@student.42.f    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/08 10:19:08 by jkollner          #+#    #+#             */
-/*   Updated: 2023/12/13 15:08:21 by jkollner         ###   ########.fr       */
+/*   Updated: 2024/02/17 12:20:27 by jonahkollne      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,6 +23,9 @@ class AForm {
 		bool	_signed;
 		const	int gradeToSign;
 		const	int gradeToExecute;
+		AForm();
+	protected:
+		void canExecute(Bureaucrat const & executor) const;
 	public:
 		AForm(std::string name, int gradeToSign, int gradeToExecute);
 		AForm(AForm const & copy);
@@ -45,7 +48,10 @@ class AForm {
 			public:
 				virtual const char* what() const throw();
 		};
-
+		class FormNotSignedException : public std::exception {
+			public:
+				virtual const char* what() const throw();
+		};
 		~AForm();
 };
 

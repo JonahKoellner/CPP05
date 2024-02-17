@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ShrubberyCreationForm.cpp                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jkollner <jkollner@student.42.fr>          +#+  +:+       +#+        */
+/*   By: jonahkollner <jonahkollner@student.42.f    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/09 18:33:15 by jonahkollne       #+#    #+#             */
-/*   Updated: 2023/12/13 15:22:09 by jkollner         ###   ########.fr       */
+/*   Updated: 2024/02/17 12:30:01 by jonahkollne      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,18 +28,27 @@ std::string ShrubberyCreationForm::getTarget() const {
 	return (this->target);
 }
 
-void ShrubberyCreationForm::execute(Bureaucrat const & executer) const {
-	if (this->getGradeToExecute() > executer.getGrade()) {
+void ShrubberyCreationForm::execute(Bureaucrat const & executer) const{
+	try
+	{
+		AForm::canExecute(executer);
+		std::ofstream file;
+		file.open((this->target + "_shrubbery").c_str());
+		std::string tree = "      /\\\n     /\\*\\\n    /\\O\\*\\\n   /*/\\/\\/\\\n  /\\O\\/\\*\\/\\\n /\\*\\/\\*\\/\\/\\\n/\\O\\/\\/*/\\/O/\\\n      ||\n      ||\n      ||";
+		if (file.is_open()) {
+			file << tree;
+			file.close();
+		}
+		else {
+			std::cout << "Error opening file" << std::endl;
+		}
+	}
+	catch(const std::exception& e)
+	{
+		std::cerr << e.what() << '\n';
+	}
+}
 
-	}
-	std::ofstream file;
-	file.open((this->target + "_shrubbery").c_str());
-	std::string tree = "      /\\\n     /\\*\\\n    /\\O\\*\\\n   /*/\\/\\/\\\n  /\\O\\/\\*\\/\\\n /\\*\\/\\*\\/\\/\\\n/\\O\\/\\/*/\\/O/\\\n      ||\n      ||\n      ||";
-	if (file.is_open()) {
-		file << tree;
-		file.close();
-	}
-	else {
-		std::cout << "Error opening file" << std::endl;
-	}
+ShrubberyCreationForm::~ShrubberyCreationForm() {
+
 }

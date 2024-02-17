@@ -3,15 +3,18 @@
 /*                                                        :::      ::::::::   */
 /*   Bureaucrat.cpp                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jkollner <jkollner@student.42.fr>          +#+  +:+       +#+        */
+/*   By: jonahkollner <jonahkollner@student.42.f    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/08 09:23:52 by jkollner          #+#    #+#             */
-/*   Updated: 2023/12/13 15:08:39 by jkollner         ###   ########.fr       */
+/*   Updated: 2024/02/17 11:59:05 by jonahkollne      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Bureaucrat.hpp"
 
+Bureaucrat::Bureaucrat() : name("random_bureaucrat") {
+	this->grade = 150;
+}
 
 Bureaucrat::Bureaucrat(std::string name, int grade) : name(name){
 	if (grade > 150)
